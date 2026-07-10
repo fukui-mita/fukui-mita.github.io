@@ -108,6 +108,27 @@ p+p{margin-top:1.2em}
 
 /* お知らせ */
 .news{background:var(--paper)}
+.notice-box{
+  background:#fff;border:1px solid var(--line);
+  border-top:4px solid var(--keio-red);
+  padding:28px 30px;margin-bottom:36px;
+}
+.notice-box h3{
+  font-family:'Shippori Mincho',serif;
+  font-size:1.25rem;color:var(--keio-blue-deep);
+  letter-spacing:.06em;margin-bottom:8px;
+}
+.notice-box .notice-lead{font-size:.93rem;color:var(--gray);margin-bottom:18px}
+.notice-box dl{border-top:1px solid var(--line)}
+.notice-box .row{
+  display:grid;grid-template-columns:90px 1fr;gap:14px;
+  padding:12px 2px;border-bottom:1px solid var(--line);
+  font-size:.95rem;
+}
+.notice-box dt{font-weight:700;color:var(--keio-blue)}
+.notice-box .deadline{
+  margin-top:16px;font-size:.9rem;font-weight:700;color:var(--keio-red);
+}
 .news ul{list-style:none;border-top:1px solid var(--line)}
 .news li{
   display:grid;grid-template-columns:110px 1fr;gap:16px;
@@ -233,18 +254,27 @@ footer{
   <div class="container">
     <p class="eyebrow">NEWS</p>
     <h2>お知らせ</h2>
+
+    <div class="notice-box">
+      <h3>7月三田会例会 開催のお知らせ</h3>
+      <p class="notice-lead">例年通り、7月に三田会例会を開催いたします。皆様お誘い合わせのうえ、ぜひご出席ください。</p>
+      <dl>
+        <div class="row"><dt>日時</dt><dd>令和8年7月28日(火) 18:30〜(受付 18:00より)</dd></div>
+        <div class="row"><dt>場所</dt><dd>ホテル リバージュ アケボノ 屋上ビアテラス(8F)<br>福井県福井市中央3-10-12 / TEL 0776-22-1000</dd></div>
+        <div class="row"><dt>会費</dt><dd>男性 7,000円(35歳以下は5,000円) / 女性 5,000円</dd></div>
+        <div class="row"><dt>出欠連絡</dt><dd>QRコード・メール・FAXいずれかでご連絡ください(担当:野村 孟弘 080-4132-7289)</dd></div>
+      </dl>
+      <p class="deadline">※ 7月21日(火)までにご出欠のご連絡をお願いいたします</p>
+    </div>
+
     <ul>
       <li>
-        <time datetime="2026-07-01">2026.07.01</time>
-        <span><span class="tag">会員向け</span>年次総会のご案内を発送しました</span>
+        <time datetime="2026-07-10">2026.07.10</time>
+        <span><span class="tag">例会</span>7月三田会例会のご案内を掲載しました(7月28日開催)</span>
       </li>
       <li>
-        <time datetime="2026-06-01">2026.06.01</time>
-        <span><span class="tag">お知らせ</span>ホームページを開設しました</span>
-      </li>
-      <li>
-        <time datetime="2026-05-01">2026.05.01</time>
-        <span><span class="tag">会員向け</span>会費納入のお願い(サンプル記事)</span>
+        <time datetime="2026-07-10">2026.07.10</time>
+        <span><span class="tag">お知らせ</span>福井県三田会ホームページを開設しました</span>
       </li>
     </ul>
   </div>
