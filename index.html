@@ -185,6 +185,8 @@ button[type=submit]{
   font-weight:700;
 }
 button[type=submit]:hover{background:#96262f}
+.form-note{margin-top:18px;font-size:.83rem;color:rgba(255,255,255,.75);line-height:1.9}
+.form-note a{color:#fff;font-weight:700;text-underline-offset:3px}
 
 /* フッター */
 footer{
@@ -305,26 +307,32 @@ footer{
       </div>
     </div>
 
-    <!-- ▼ FormSubmit: action の YOUR_EMAIL を受信用メールアドレスに書き換えてください -->
-    <form action="https://formsubmit.co/fukui.mita.getsurei@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="【福井県三田会HP】お問い合わせ">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="text" name="_honey" style="display:none">
-
+    <form id="contact-form">
       <label for="name">お名前<span class="req">必須</span></label>
-      <input type="text" id="name" name="お名前" required>
-
-      <label for="email">メールアドレス<span class="req">必須</span></label>
-      <input type="email" id="email" name="メールアドレス" required>
+      <input type="text" id="name" required>
 
       <label for="grad">卒業年・学部(入会希望の方)</label>
-      <input type="text" id="grad" name="卒業年・学部" placeholder="例:平成XX年 経済学部卒">
+      <input type="text" id="grad" placeholder="例:平成XX年 経済学部卒">
 
-      <label for="message">お問い合わせ内容<span class="req">必須</span></label>
-      <textarea id="message" name="お問い合わせ内容" rows="5" required></textarea>
+      <label for="message">お問い合わせ内容(例会の出欠連絡もこちらへ)<span class="req">必須</span></label>
+      <textarea id="message" rows="5" required></textarea>
 
-      <button type="submit">送信する</button>
+      <button type="submit">メールで送信する</button>
+      <p class="form-note">送信ボタンを押すと、お使いのメールアプリが起動します。<br>
+      直接メールされる場合はこちらへ:<a href="mailto:fukui.mita.getsurei@gmail.com">fukui.mita.getsurei@gmail.com</a></p>
     </form>
+    <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = document.getElementById('name').value;
+      var grad = document.getElementById('grad').value;
+      var msg  = document.getElementById('message').value;
+      var body = 'お名前:' + name + '\n卒業年・学部:' + grad + '\n\n' + msg;
+      location.href = 'mailto:fukui.mita.getsurei@gmail.com'
+        + '?subject=' + encodeURIComponent('【福井県三田会HP】お問い合わせ(' + name + ')')
+        + '&body=' + encodeURIComponent(body);
+    });
+    </script>
   </div>
 </section>
 
